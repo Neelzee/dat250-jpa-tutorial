@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class Address {
@@ -12,12 +13,15 @@ public class Address {
     private Long id;
 
     @Getter
+    @Setter
     private String street;
 
     @Getter
+    @Setter
     private Integer number;
 
     @Getter
+    @Setter
     @OneToMany()
     private Collection<Customer> owners = new ArrayList<>();
 

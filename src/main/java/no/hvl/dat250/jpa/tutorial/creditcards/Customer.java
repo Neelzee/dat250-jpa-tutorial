@@ -6,6 +6,7 @@ import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 import no.hvl.dat250.jpa.tutorial.relationshipexample.Person;
 
 @Entity
@@ -16,15 +17,18 @@ public class Customer {
 
 
     @Getter
+    @Setter
     private String name;
 
     @Getter
+    @Setter
     @ManyToMany()
-    private final Collection<Address> addresses = new ArrayList<>();
+    private Collection<Address> addresses = new ArrayList<>();
 
     @Getter
+    @Setter
     @ManyToMany()
-    private final Collection<CreditCard> creditCards = new ArrayList<>();
+    private Collection<CreditCard> creditCards = new ArrayList<>();
 
 
 }
