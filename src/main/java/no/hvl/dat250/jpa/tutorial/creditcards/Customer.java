@@ -1,7 +1,12 @@
 package no.hvl.dat250.jpa.tutorial.creditcards;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+
 import jakarta.persistence.*;
+import lombok.Getter;
+import no.hvl.dat250.jpa.tutorial.relationshipexample.Person;
 
 @Entity
 public class Customer {
@@ -9,18 +14,17 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public String getName() {
-        // TODO: implement method!
-        return null;
-    }
 
-    public Collection<Address> getAddresses() {
-        // TODO: implement method!
-        return null;
-    }
+    @Getter
+    private String name;
 
-    public Collection<CreditCard> getCreditCards() {
-        // TODO: implement method!
-        return null;
-    }
+    @Getter
+    @ManyToMany()
+    private final Collection<Address> addresses = new ArrayList<>();
+
+    @Getter
+    @ManyToMany()
+    private final Collection<CreditCard> creditCards = new ArrayList<>();
+
+
 }

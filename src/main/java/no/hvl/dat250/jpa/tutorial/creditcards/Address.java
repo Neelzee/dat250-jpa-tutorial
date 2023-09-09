@@ -1,7 +1,9 @@
 package no.hvl.dat250.jpa.tutorial.creditcards;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import jakarta.persistence.*;
+import lombok.Getter;
 
 @Entity
 public class Address {
@@ -9,18 +11,14 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public String getStreet() {
-        // TODO: implement method!
-        return null;
-    }
+    @Getter
+    private String street;
 
-    public Integer getNumber() {
-        // TODO: implement method!
-        return null;
-    }
+    @Getter
+    private Integer number;
 
-    public Collection<Customer> getOwners() {
-        // TODO: implement method!
-        return null;
-    }
+    @Getter
+    @OneToMany()
+    private Collection<Customer> owners = new ArrayList<>();
+
 }

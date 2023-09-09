@@ -1,25 +1,22 @@
 package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
 public class Bank {
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Long getId() {
-        return id;
-    }
+    @Getter
+    private String name;
 
-    public String getName() {
-        // TODO: implement method!
-        return null;
-    }
-
-    public Collection<CreditCard> getOwnedCards() {
-        // TODO: implement method!
-        return null;
-    }
+    @Getter
+    @OneToMany()
+    private Collection<CreditCard> ownedCards = new ArrayList<>();
 }
