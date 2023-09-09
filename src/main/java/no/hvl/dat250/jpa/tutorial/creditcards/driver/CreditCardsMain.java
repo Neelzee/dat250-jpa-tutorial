@@ -47,7 +47,7 @@ public class CreditCardsMain {
     CreditCard card2 = new CreditCard();
     card2.setNumber(123);
     card2.setBalance(1);
-    card2.setCreditLimit(1000);
+    card2.setCreditLimit(2000);
 
 
 
@@ -72,6 +72,8 @@ public class CreditCardsMain {
 
     bank.setOwnedCards(creditCards);
 
+    card1.setOwningBank(bank);
+    card2.setOwningBank(bank);
 
     c.setCreditCards(creditCards);
 

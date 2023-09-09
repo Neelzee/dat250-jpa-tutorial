@@ -22,7 +22,7 @@ public class Address {
 
     @Getter
     @Setter
-    @OneToMany()
+    @ManyToMany()
     private Collection<Customer> owners = new ArrayList<>();
 
 }
