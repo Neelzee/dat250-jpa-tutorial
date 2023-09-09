@@ -27,7 +27,6 @@ public class CreditCardsMain {
 
 
     Address a = new Address();
-    em.persist(a);
 
     a.setNumber(28);
     a.setStreet("Inndalsveien");
@@ -35,27 +34,29 @@ public class CreditCardsMain {
     ArrayList<Address> l = new ArrayList<>();
     l.add(a);
 
+    ArrayList<Customer> customers = new ArrayList<>();
+
     Customer c = new Customer();
-    em.persist(c);
+    customers.add(c);
+
+    a.setOwners(customers);
 
     c.setName("Max Mustermann");
     c.setAddresses(l);
 
     CreditCard card2 = new CreditCard();
-    em.persist(card2);
     card2.setNumber(123);
     card2.setBalance(1);
     card2.setCreditLimit(1000);
 
 
+
     CreditCard card1 = new CreditCard();
-    em.persist(card1);
     card1.setNumber(12345);
     card1.setBalance(-5000);
     card1.setCreditLimit(-10000);
 
     Pincode pincode = new Pincode();
-    em.persist(pincode);
     pincode.setCode("123");
     pincode.setCount(1);
 
@@ -63,7 +64,6 @@ public class CreditCardsMain {
     card2.setPincode(pincode);
 
     Bank bank = new Bank();
-    em.persist(bank);
     bank.setName("Pengebank");
 
     ArrayList<CreditCard> creditCards = new ArrayList<>();
@@ -76,5 +76,11 @@ public class CreditCardsMain {
     c.setCreditCards(creditCards);
 
 
+    em.persist(a);
+    em.persist(c);
+    em.persist(card2);
+    em.persist(card1);
+    em.persist(pincode);
+    em.persist(bank);
   }
 }
