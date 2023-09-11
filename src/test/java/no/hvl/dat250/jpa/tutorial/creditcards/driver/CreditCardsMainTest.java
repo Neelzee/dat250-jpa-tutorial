@@ -42,7 +42,7 @@ public class CreditCardsMainTest {
 
         assertThat(address.getStreet(), is("Inndalsveien"));
         assertThat(address.getNumber(), is(28));
-        //assertThat(address.getOwners(), is(Set.of(customer)));
+        assertThat(address.getOwners(), is(Set.of(customer)));
 
         // Test credit cards
         assertThat(customer.getCreditCards().size(), is(2));
@@ -68,7 +68,7 @@ public class CreditCardsMainTest {
         Bank bank = firstCard.getOwningBank();
         assertThat(bank.getId(), is(secondCard.getOwningBank().getId())); // Bank objects of the two cards are identical!
         assertThat(bank.getName(), is("Pengebank"));
-        //assertThat(bank.getOwnedCards(), is(Set.of(firstCard, secondCard)));
+        assertThat(bank.getOwnedCards(), is(Set.of(firstCard, secondCard)));
     }
 
     private CreditCard getCardWithNumber(Customer customer, int cardNumber) {

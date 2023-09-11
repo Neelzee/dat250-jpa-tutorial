@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Bank {
@@ -21,5 +23,5 @@ public class Bank {
     @Setter
     @Getter
     @OneToMany()
-    private Collection<CreditCard> ownedCards = new ArrayList<>();
+    private Set<CreditCard> ownedCards = new HashSet<>();
 }

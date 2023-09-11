@@ -6,6 +6,7 @@ import jakarta.persistence.Persistence;
 import no.hvl.dat250.jpa.tutorial.creditcards.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
 
 public class CreditCardsMain {
@@ -31,10 +32,10 @@ public class CreditCardsMain {
     a.setNumber(28);
     a.setStreet("Inndalsveien");
 
-    ArrayList<Address> l = new ArrayList<>();
+    HashSet<Address> l = new HashSet<>();
     l.add(a);
 
-    ArrayList<Customer> customers = new ArrayList<>();
+    HashSet<Customer> customers = new HashSet<>();
 
     Customer c = new Customer();
     customers.add(c);
@@ -66,7 +67,7 @@ public class CreditCardsMain {
     Bank bank = new Bank();
     bank.setName("Pengebank");
 
-    ArrayList<CreditCard> creditCards = new ArrayList<>();
+    HashSet<CreditCard> creditCards = new HashSet<>();
     creditCards.add(card1);
     creditCards.add(card2);
 

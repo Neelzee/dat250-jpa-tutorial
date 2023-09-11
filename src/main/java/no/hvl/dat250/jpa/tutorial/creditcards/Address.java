@@ -2,6 +2,9 @@ package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +26,6 @@ public class Address {
     @Getter
     @Setter
     @ManyToMany()
-    private Collection<Customer> owners = new ArrayList<>();
+    private Set<Customer> owners = new HashSet<>();
 
 }
