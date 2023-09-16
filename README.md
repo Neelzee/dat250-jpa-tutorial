@@ -14,4 +14,4 @@ But, since it was relativly straightforward input, I could visualize it, and sin
 
 ![](img.png)
 ![](img_1.png)
-![](structure.png)
+
